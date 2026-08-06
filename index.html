@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XI-E ESTHEREA — MAN 1 Kota Kediri</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --secondary: #ec4899;
+      --accent: #10b981;
+      --bg-dark: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* CONTAINER & SECTION */
+    .container {
+      width: 88%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 160px 0 80px;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(99, 102, 241, 0.25), transparent 70%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(to right, #fff, var(--text-muted));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 15px auto 30px;
+      line-height: 1.8;
+    }
+
+    /* QUICK LINK BUTTONS */
+    .hero-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .btn-link:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    /* STATS BOX */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      backdrop-filter: blur(10px);
+      text-align: left;
+    }
+
+    .stat-card i {
+      font-size: 2rem;
+      color: var(--primary);
+      background: rgba(99, 102, 241, 0.1);
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    .stat-card h3 {
+      font-size: 1.2rem;
+    }
+
+    .stat-card p {
+      font-size: 0.85rem;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    /* ALERT BANNER */
+    .alert-box {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(99, 102, 241, 0.15));
+      border: 1px solid rgba(236, 72, 153, 0.3);
+      padding: 18px 25px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .alert-icon {
+      font-size: 1.5rem;
+      color: var(--secondary);
+    }
+
+    /* TABS */
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 10px 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    /* CARDS & GRIDS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: 16px;
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .jadwal-card {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .jadwal-card:hover {
+      border-color: var(--accent);
+    }
+
+    /* GALERI STYLES */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-card:hover .gallery-img {
+      transform: scale(1.08);
+    }
+
+    .gallery-info {
+      padding: 15px;
+      background: var(--card-bg);
+    }
+
+    .gallery-info h3 {
+      font-size: 1.05rem;
+      margin-bottom: 5px;
+    }
+
+    .gallery-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* SEARCH BOX */
+    .search-box {
+      position: relative;
+      max-width: 450px;
+      margin: 0 auto 35px;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      color: #fff;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+    }
+
+    /* LINK CARD SECTION */
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .link-card i {
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--primary);
+    }
+
+    .link-card:hover i {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* MODAL POPUP */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .modal-close:hover {
+      color: #fff;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    footer .footer-socials a {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    footer .footer-socials a:hover {
+      color: var(--primary);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.3rem; }
+      .navbar { flex-direction: column; gap: 12px; }
+      .nav-links { gap: 12px; font-size: 0.85rem; flex-wrap: wrap; justify-content: center; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-graduation-cap"></i> ESTHEREA
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Beranda</a></li>
+      <li><a href="#jadwal">Jadwal</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#piket">Piket</a></li>
+      <li><a href="#struktur">Organisasi</a></li>
+      <li><a href="#siswa">Siswa</a></li>
+      <li><a href="#tautan">Tautan</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="hero" class="hero">
+    <div class="hero-content">
+      <span class="badge"><i class="fa-solid fa-sparkles"></i> Class Official Website</span>
+      <h1 id="class-title">XI-E ESTHEREA</h1>
+      <p class="hero-desc" id="class-slogan">
+        <strong>ESTHEREA</strong> adalah nama identitas resmi untuk kelas <strong>XI-E MAN 1 Kota Kediri</strong>. 
+        Wadah kebersamaan, persaudaraan, serta perjuangan dalam menggapai prestasi bersama.
+      </p>
+
+      <!-- QUICK LINK BUTTONS -->
+      <div class="hero-links">
+        <a href="https://instagram.com" target="_blank" class="btn-link">
+          <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> Instagram Kelas
+        </a>
+        <a href="https://instagram.com/man1kotakediri" target="_blank" class="btn-link">
+          <i class="fa-brands fa-instagram" style="color: #c13584;"></i> IG MAN 1 Kota Kediri
+        </a>
+        <a href="https://spotify.com" target="_blank" class="btn-link">
+          <i class="fa-brands fa-spotify" style="color: #1db954;"></i> Playlist Spotify
+        </a>
+      </div>
+
+      <!-- STATS BOX -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <h3 id="stat-siswa">36</h3>
+            <p>Total Siswa</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <i class="fa-solid fa-school"></i>
+          <div>
+            <h3>MAN 1 Kota Kediri</h3>
+            <p>Madrasah Aliyah</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <i class="fa-solid fa-crown"></i>
+          <div>
+            <h3 id="stat-ketua">Hilmi</h3>
+            <p>Ketua Kelas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <section class="container">
+    <div class="alert-box">
+      <i class="fa-solid fa-bullhorn alert-icon"></i>
+      <div id="announcement-text">Selamat datang di website resmi kelas XI-E ESTHEREA MAN 1 Kota Kediri! Selalu periksa jadwal pelajaran dan tugas piket Anda.</div>
+    </div>
+  </section>
+
+  <!-- JADWAL PELAJARAN -->
+  <section id="jadwal" class="container section">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-calendar-days"></i> Jadwal Pelajaran</h2>
+      <p>Klik/pencet pada nama pelajaran untuk mengecek detail tugas & PR!</p>
+    </div>
+    <div class="tab-buttons" id="jadwal-tabs">
+      <button class="tab-btn active" onclick="showJadwal('Senin')">Senin</button>
+      <button class="tab-btn" onclick="showJadwal('Selasa')">Selasa</button>
+      <button class="tab-btn" onclick="showJadwal('Rabu')">Rabu</button>
+      <button class="tab-btn" onclick="showJadwal('Kamis')">Kamis</button>
+      <button class="tab-btn" onclick="showJadwal('Jumat')">Jumat</button>
+    </div>
+    <div class="card-grid" id="jadwal-list"></div>
+  </section>
+
+  <!-- GALERI KENANGAN -->
+  <section id="galeri" class="container section">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-images"></i> Galeri Kenangan</h2>
+      <p>Dokumentasi momen kebersamaan kelas XI-E ESTHEREA</p>
+    </div>
+    <div class="gallery-grid" id="galeri-grid"></div>
+  </section>
+
+  <!-- JADWAL PIKET -->
+  <section id="piket" class="container section">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-broom"></i> Jadwal Piket Kebersihan</h2>
+      <p>Petugas kebersihan kelas berdasarkan hari</p>
+    </div>
+    <div class="grid-5" id="piket-grid"></div>
+  </section>
+
+  <!-- STRUKTUR ORGANISASI -->
+  <section id="struktur" class="container section">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-sitemap"></i> Pengurus Kelas</h2>
+      <p>Struktur organisasi XI-E Estherea MAN 1 Kota Kediri</p>
+    </div>
+    <div class="card-grid" id="struktur-grid"></div>
+  </section>
+
+  <!-- DAFTAR SISWA -->
+  <section id="siswa" class="container section">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-id-card"></i> Anggota Kelas</h2>
+      <p>Daftar seluruh 36 siswa XI-E Estherea</p>
+    </div>
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="search-input" placeholder="Cari nama siswa..." onkeyup="filterSiswa()">
+    </div>
+    <div class="card-grid" id="siswa-grid"></div>
+  </section>
+
+  <!-- TAUTAN PENTING / QUICK LINKS -->
+  <section id="tautan" class="container section">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-link"></i> Tautan & Media Kelas</h2>
+      <p>Akses cepat ke media sosial resmi kelas XI-E ESTHEREA dan Madrasah</p>
+    </div>
+    <div class="card-grid">
+      <a href="https://instagram.com" target="_blank" class="card link-card">
+        <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+        <div>
+          <h3>Instagram Kelas</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Dokumentasi kegiatan dan keseruan XI-E Estherea</p>
+        </div>
+      </a>
+      <a href="https://instagram.com/man1kotakediri" target="_blank" class="card link-card">
+        <i class="fa-brands fa-instagram" style="color: #c13584;"></i>
+        <div>
+          <h3>IG MAN 1 Kota Kediri</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Akun Instagram resmi MAN 1 Kota Kediri</p>
+        </div>
+      </a>
+      <a href="https://spotify.com" target="_blank" class="card link-card">
+        <i class="fa-brands fa-spotify" style="color: #1db954;"></i>
+        <div>
+          <h3>Playlist Spotify</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Lagu favorit pilihan teman-teman sekelas</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- MODAL POPUP DETAIL TUGAS -->
+  <div id="task-modal" class="modal-overlay" onclick="if(event.target === this) closeModal()">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 XI-E ESTHEREA — MAN 1 Kota Kediri. All Rights Reserved.</p>
+    <div class="footer-socials">
+      <a href="https://instagram.com" target="_blank" title="Instagram Kelas"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://instagram.com/man1kotakediri" target="_blank" title="Instagram MAN 1 Kota Kediri"><i class="fa-solid fa-school"></i></a>
+      <a href="https://spotify.com" target="_blank" title="Spotify"><i class="fa-brands fa-spotify"></i></a>
+    </div>
+  </footer>
+
+  <!-- DATA KELAS DAN LOGIKA JAVASCRIPT -->
+  <script>
+    const dataKelas = {
+      "infoKelas": {
+        "namaKelas": "XI-E ESTHEREA",
+        "slogan": "ESTHEREA adalah nama identitas resmi untuk kelas XI-E MAN 1 Kota Kediri. Wadah kebersamaan, persaudaraan, serta perjuangan dalam menggapai prestasi bersama.",
+        "waliKelas": "Ahmad Asyik S.Pd.",
+        "ketuaKelas": "Mohammad Hilmi Saifulloh (Hilmi)",
+        "jumlahSiswa": 36,
+        "pengumuman": "📢 Selamat datang di website resmi kelas XI-E ESTHEREA MAN 1 Kota Kediri! Selalu periksa jadwal pelajaran dan tugas piket Anda."
+      },
+
+      "tugasPR": [
+        {
+          "mapel": "Sejarah Kebudayaan Islam (SKI)",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Matematika Lanjut",
+          "adaTugas": false,
+          "judul": "tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Fisika",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Bahasa Indonesia",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Kimia",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Biologi",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Matematika",
+          "adaTugas": true,
+          "judul": "Menulis contoh soal dari 8 rumus refleksi dan 2 rumus rotasi",
+          "deadline": "secepatnya",
+          "deskripsi": "1 contoh soal refleksi terhadap titik, 2 contoh soal refleksi terhadap garis pada setiap rumus dan 2 contoh soal rotasi",
+          "urgent": false
+        },
+        {
+          "mapel": "Al-Qur`an Hadis",
+          "adaTugas": true,
+          "judul": "Menulis dan menghafal",
+          "deadline": "07,08,2026",
+          "deskripsi": "QS. Al-Baqarah ayat 30sampai32, QS. An-Nahl ayat 28, QS. Al-Mu'minun ayat 12sampai14",
+          "urgent": true
+        },
+        {
+          "mapel": "Akidah Akhlak",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Fiqih",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Bahasa Arab",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Bahasa Inggris",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Sejarah",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "Seni Budaya",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+        {
+          "mapel": "PPKn",
+          "adaTugas": false,
+          "judul": "Tidak ada tugas",
+          "deadline": "Tidak ada tugas",
+          "deskripsi": "Tidak ada tugas",
+          "urgent": false
+        },
+      ],
+
+      "galeri": [
+        {
+          "judul": "Laprong",
+          "tanggal": "06 Agustus 2026",
+          "gambar": "https://photos.app.goo.gl/WHQBueEKD9EYVzPA7"
+        },
+        {
+          "judul": "Laprong",
+          "tanggal": "06 Agustus 2026",
+          "gambar": "https://photos.app.goo.gl/WHQBueEKD9EYVzPA7"
+        },
+        {
+          "judul": "Laprong",
+          "tanggal": "06 Agustus 2026",
+          "gambar": "https://photos.app.goo.gl/WHQBueEKD9EYVzPA7"
+        }
+      ],
+
+      "struktur": [
+        { "jabatan": "Wali Kelas", "nama": "Ahmad Asyik S.Pd.", "icon": "fa-chalkboard-teacher" },
+        { "jabatan": "Ketua Kelas", "nama": "Mohammad Hilmi Saifulloh (Hilmi)", "icon": "fa-user-tie" },
+        { "jabatan": "Wakil Ketua", "nama": "M. Ramadhan Surya Winata (Rama)", "icon": "fa-user-shield" },
+        { "jabatan": "Sekretaris 1", "nama": "Muhammad Fariih `Izzuna (Fariih)", "icon": "fa-pen-fancy" },
+        { "jabatan": "Sekretaris 2", "nama": "Shahnazzia Al-Haq (Sahnazia)", "icon": "fa-file-signature" },
+        { "jabatan": "Bendahara 1", "nama": "M. Hizham Baihaki (Izam)", "icon": "fa-wallet" },
+        { "jabatan": "Bendahara 2", "nama": "Nabila Putri Ramadhani (Nabila)", "icon": "fa-coins" }
+      ],
+
+      "jadwalPelajaran": {
+        "Senin": [
+          "Jam 1: Matematika Lanjut", "Jam 2: Matematika Lanjut", 
+          "Jam 3: Bahasa Inggris", "Jam 4: Bahasa Inggris", 
+          "Jam 5: Kimia", "Jam 6: Kimia", 
+          "Jam 7: Sejarah Kebudayaan Islam (SKI)", "Jam 8: Sejarah Kebudayaan Islam (SKI)", 
+          "Jam 9: Fisika", "Jam 10: Fisika"
+        ],
+        "Selasa": [
+          "Jam 1: Sejarah", "Jam 2: Sejarah", 
+          "Jam 3: Matematika Lanjut", "Jam 4: Matematika Lanjut", 
+          "Jam 5: Biologi", "Jam 6: Biologi", 
+          "Jam 7: Keterampilan", "Jam 8: Keterampilan", "Jam 9: Keterampilan", "Jam 10: Keterampilan"
+        ],
+        "Rabu": [
+          "Jam 1: Fiqih", "Jam 2: Fiqih", 
+          "Jam 3: Biologi", "Jam 4: Biologi", 
+          "Jam 5: Fisika", "Jam 6: Fisika", 
+          "Jam 7: Seni Budaya", "Jam 8: Seni Budaya", 
+          "Jam 9: Kimia", "Jam 10: Kimia"
+        ],
+        "Kamis": [
+          "Jam 1: PJOK", "Jam 2: PJOK", 
+          "Jam 3: Biologi", "Jam 4: Kimia", 
+          "Jam 5: Bahasa Arab", "Jam 6: Bahasa Arab", 
+          "Jam 7: Bahasa Indonesia", "Jam 8: Matematika", 
+          "Jam 9: Akidah Akhlak", "Jam 10: Akidah Akhlak"
+        ],
+        "Jumat": [
+          "Jam 1: Al-Qur'an Hadis", "Jam 2: Al-Qur'an Hadis", 
+          "Jam 3: Matematika", "Jam 4: Matematika", 
+          "Jam 5: Bahasa Indonesia", "Jam 6: Bahasa Indonesia", 
+          "Jam 7: PPKn", "Jam 8: PPKn", 
+          "Jam 9: Bahasa Inggris", "Jam 10: Fisika", "Jam 11: Matematika Lanjut"
+        ]
+      },
+
+      "jadwalPiket": {
+        "Senin": ["Muhammad Ramadhan Surya Winata", "Muhammad Fariih Izzuna", "Naila Aprilinda Sari", "Naura Maulida Fikri", "Shelina Aprilia Maharani", "Leviana Auryn Anatasya", "Marissa Ayu Nur Ramadhani", "Hafidza Syafa Putri Dwiendra"],
+        "Selasa": ["Dzaky Azka Razzaq", "Muhammad Ali", "Nadifa Amadeus Kusumawari", "Nabila Rihadatul Aisya", "Nayla Vaza Safira", "Zuwinda Catur Lestari", "Aulia Lutfi Ramadhani"],
+        "Rabu": ["M. Reza Azhar", "Mohammad Hilmi Saifulloh", "Siti Nismara Ubhayahita", "Firda Zakiyatus Syifa", "Shelvie Aria Fatmadani", "Nabila Putri Ramadhani", "Nava Fikriya Ivana Putri"],
+        "Kamis": ["Moh. Idham Faturohman", "Gading Panuntun", "Shahnazzia Al-Haq", "Kezia Revalina Ivana Rahmadhani", "Larasati Qurratuainin Achmad", "Fira Quin Aura Rahmadani", "Fadhila Rahmania"],
+        "Jumat": ["M. Hizham Baihaki", "M. Rifqy Hanif", "Khuzaimatus Salwa Kamila", "Garnetha Falcya Billa", "Mufida Annisa Putri Romli", "Salma Dhia Athaya", "Zaskia Sari Kencono Rohmah"]
+      },
+
+      "daftarSiswa": [
+        { "absen": 1, "nama": "Aulia Lutfi Ramadhani", "gender": "P" },
+        { "absen": 2, "nama": "Dzaky Azka Razzaq", "gender": "L" },
+        { "absen": 3, "nama": "Fadhila Rahmania", "gender": "P" },
+        { "absen": 4, "nama": "Fira Quin Aura Rahmadani", "gender": "P" },
+        { "absen": 5, "nama": "Firda Zakiyatus Syifa", "gender": "P" },
+        { "absen": 6, "nama": "Gading Panuntun", "gender": "L" },
+        { "absen": 7, "nama": "Garnetha Falcya Billa", "gender": "P" },
+        { "absen": 8, "nama": "Hafidza Syafa Putri Dwiendra", "gender": "P" },
+        { "absen": 9, "nama": "Kezia Revalina Ivana Rahmadhani", "gender": "P" },
+        { "absen": 10, "nama": "Khuzaimatus Salwa Kamila", "gender": "P" },
+        { "absen": 11, "nama": "Larasati Qurratuainin Achmad", "gender": "P" },
+        { "absen": 12, "nama": "Leviana Auryn Anatasya", "gender": "P" },
+        { "absen": 13, "nama": "M. Ramadhan Surya Winata", "gender": "L" },
+        { "absen": 14, "nama": "M. Reza Azhar", "gender": "L" },
+        { "absen": 15, "nama": "M. Rifqy Hanif", "gender": "L" },
+        { "absen": 16, "nama": "M. Hizham Baihaki", "gender": "L" },
+        { "absen": 17, "nama": "Marissa Ayu Nur Ramadhani", "gender": "P" },
+        { "absen": 18, "nama": "Moh. Idham Faturohman", "gender": "L" },
+        { "absen": 19, "nama": "Mohammad Hilmi Saifulloh", "gender": "L" },
+        { "absen": 20, "nama": "Mufida Annisa Putri Romli", "gender": "P" },
+        { "absen": 21, "nama": "Muhammad Ali", "gender": "L" },
+        { "absen": 22, "nama": "Muhammad Fariih Izzuna", "gender": "L" },
+        { "absen": 23, "nama": "Nabila Putri Ramadhani", "gender": "P" },
+        { "absen": 24, "nama": "Nabila Rihadatul Aisya", "gender": "P" },
+        { "absen": 25, "nama": "Nadifa Amadeus Kusumawari", "gender": "P" },
+        { "absen": 26, "nama": "Naila Aprilinda Sari", "gender": "P" },
+        { "absen": 27, "nama": "Naura Maulida Fikri", "gender": "P" },
+        { "absen": 28, "nama": "Nava Fikriya Ivana Putri", "gender": "P" },
+        { "absen": 29, "nama": "Nayla Vaza Safira", "gender": "P" },
+        { "absen": 30, "nama": "Salma Dhia Athaya", "gender": "P" },
+        { "absen": 31, "nama": "Shahnazzia Al-Haq", "gender": "P" },
+        { "absen": 32, "nama": "Shelina Aprilia Maharani", "gender": "P" },
+        { "absen": 33, "nama": "Shelvie Aria Fatmadani", "gender": "P" },
+        { "absen": 34, "nama": "Siti Nismara Ubhayahita", "gender": "P" },
+        { "absen": 35, "nama": "Zaskia Sari Kencono Rohmah", "gender": "P" },
+        { "absen": 36, "nama": "Zuwinda Catur Lestari", "gender": "P" }
+      ]
+    };
+
+    let allSiswaData = dataKelas.daftarSiswa;
+
+    window.onload = function() {
+      loadInfoKelas(dataKelas.infoKelas);
+      loadStruktur(dataKelas.struktur);
+      loadJadwalPelajaran(dataKelas.jadwalPelajaran);
+      loadGaleri(dataKelas.galeri);
+      loadJadwalPiket(dataKelas.jadwalPiket);
+      loadDaftarSiswa(dataKelas.daftarSiswa);
+    };
+
+    function loadInfoKelas(info) {
+      document.getElementById('class-title').innerText = info.namaKelas;
+      document.getElementById('class-slogan').innerHTML = info.slogan;
+      document.getElementById('stat-siswa').innerText = info.jumlahSiswa;
+      document.getElementById('stat-ketua').innerText = info.ketuaKelas.split(' ')[0] || info.ketuaKelas;
+      document.getElementById('announcement-text').innerText = info.pengumuman;
+    }
+
+    function loadGaleri(galeriList) {
+      const container = document.getElementById('galeri-grid');
+      container.innerHTML = '';
+      galeriList.forEach(item => {
+        container.innerHTML += `
+          <div class="card gallery-card">
+            <img src="${item.gambar}" alt="${item.judul}" class="gallery-img">
+            <div class="gallery-info">
+              <h3>${item.judul}</h3>
+              <p><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i>${item.tanggal}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function loadStruktur(struktur) {
+      const container = document.getElementById('struktur-grid');
+      container.innerHTML = '';
+      struktur.forEach(item => {
+        container.innerHTML += `
+          <div class="card" style="text-align: center;">
+            <i class="fa-solid ${item.icon}" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 12px;"></i>
+            <h4 style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase;">${item.jabatan}</h4>
+            <h3 style="margin-top: 5px; font-size: 1.05rem;">${item.nama}</h3>
+          </div>
+        `;
+      });
+    }
+
+    let globalJadwal = {};
+    function loadJadwalPelajaran(jadwal) {
+      globalJadwal = jadwal;
+      const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+      const todayName = days[new Date().getDay()];
+      if (jadwal[todayName]) {
+        showJadwal(todayName);
+      } else {
+        showJadwal('Senin');
+      }
+    }
+
+    function showJadwal(hari) {
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText.toLowerCase() === hari.toLowerCase()) {
+          btn.classList.add('active');
+        }
+      });
+
+      const container = document.getElementById('jadwal-list');
+      container.innerHTML = '';
+      const mapelList = globalJadwal[hari] || [];
+      mapelList.forEach((mapel) => {
+        container.innerHTML += `
+          <div class="card jadwal-card" onclick="showDetailTugas('${mapel.replace(/'/g, "\\'")}')">
+            <div style="display: flex; align-items: center; gap: 15px;">
+              <i class="fa-solid fa-book-open" style="color: var(--primary); font-size: 1.2rem;"></i>
+              <h3 style="font-size: 1.05rem;">${mapel}</h3>
+            </div>
+            <i class="fa-solid fa-circle-info" style="color: var(--text-muted); font-size: 1rem;"></i>
+          </div>
+        `;
+      });
+    }
+
+    /* FUNGSI POPUP DETAIL TUGAS */
+    function showDetailTugas(mapelStr) {
+      // Menghapus prefix "Jam X: "
+      const namaMapel = mapelStr.replace(/^Jam\s+\d+:\s*/i, '').trim();
+      
+      // Normalisasi string: ubah ke lowercase dan samakan semua jenis petik (` atau ')
+      const cleanNamaMapel = namaMapel.toLowerCase().replace(/[`’']/g, "'");
+
+      // Cari data di dataKelas.tugasPR dengan perbandingan yang disesuaikan
+      let tugas = dataKelas.tugasPR.find(t => 
+        t.mapel.toLowerCase().replace(/[`’']/g, "'") === cleanNamaMapel
+      );
+      
+      const adaTugasVal = tugas && tugas.adaTugas ? "ada" : "tidak ada";
+      const judulVal = (tugas && tugas.adaTugas && tugas.judul) ? tugas.judul : "tidak ada";
+      const deadlineVal = (tugas && tugas.adaTugas && tugas.deadline) ? tugas.deadline : "tidak ada";
+      const deskripsiVal = (tugas && tugas.adaTugas && tugas.deskripsi) ? tugas.deskripsi : "tidak ada";
+
+      document.getElementById('modal-body').innerHTML = `
+        <div style="margin-bottom: 18px;">
+          <span class="badge" style="margin-bottom: 8px;"><i class="fa-solid fa-circle-info"></i> Detail Tugas</span>
+          <h3 style="font-size: 1.3rem; color: #fff;">${namaMapel}</h3>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.6); padding: 18px; border-radius: 12px; border: 1px solid var(--border); font-family: monospace; font-size: 0.95rem; line-height: 1.8; color: #f8fafc;">
+          <div><strong>Mata Pelajaran:</strong> ${namaMapel},</div>
+          <div><strong>Ada Tugas:</strong> ${adaTugasVal},</div>
+          <div><strong>Judul:</strong> ${judulVal},</div>
+          <div><strong>Deadline:</strong> ${deadlineVal},</div>
+          <div><strong>Deskripsi:</strong> ${deskripsiVal}.</div>
+        </div>
+      `;
+      
+      document.getElementById('task-modal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('task-modal').classList.remove('active');
+    }
+
+    function loadJadwalPiket(piket) {
+      const container = document.getElementById('piket-grid');
+      container.innerHTML = '';
+      for (const [hari, anggota] of Object.entries(piket)) {
+        let anggotaHTML = anggota.map(nama => `<li style="list-style: none; padding: 4px 0; color: var(--text-muted); border-bottom: 1px dashed var(--border);"><i class="fa-solid fa-check" style="color: var(--primary); font-size: 0.8rem; margin-right: 8px;"></i>${nama}</li>`).join('');
+        container.innerHTML += `
+          <div class="card">
+            <h3 style="color: var(--secondary); margin-bottom: 12px; border-bottom: 2px solid var(--border); padding-bottom: 8px;">${hari}</h3>
+            <ul>${anggotaHTML}</ul>
+          </div>
+        `;
+      }
+    }
+
+    function loadDaftarSiswa(siswaList) {
+      const container = document.getElementById('siswa-grid');
+      container.innerHTML = '';
+      siswaList.forEach(siswa => {
+        const iconGender = siswa.gender === 'L' ? 'fa-mars' : 'fa-venus';
+        const colorGender = siswa.gender === 'L' ? '#3b82f6' : '#ec4899';
+        container.innerHTML += `
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span style="font-size: 0.8rem; background: var(--glass); padding: 3px 10px; border-radius: 20px;">Absen ${siswa.absen}</span>
+              <i class="fa-solid ${iconGender}" style="color: ${colorGender}; font-size: 1.1rem;"></i>
+            </div>
+            <h3 style="font-size: 1.05rem; margin-bottom: 5px;">${siswa.nama}</h3>
+          </div>
+        `;
+      });
+    }
+
+    function filterSiswa() {
+      const keyword = document.getElementById('search-input').value.toLowerCase();
+      const filtered = allSiswaData.filter(siswa => 
+        siswa.nama.toLowerCase().includes(keyword)
+      );
+      loadDaftarSiswa(filtered);
+    }
+  </script>
+</body>
+</html>
